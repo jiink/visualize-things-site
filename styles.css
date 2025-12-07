@@ -102,30 +102,28 @@ nav {
     justify-content: center;
     margin-bottom: 60px;
 }
-
-
 .media-placeholder {
     width: 100%;
     max-width: 900px;
-    aspect-ratio: 16/9;
+    /* This automatically calculates height based on width to keep video shape */
+    aspect-ratio: 16/9; 
     background: linear-gradient(135deg, #2c3e50, #182329);
     border-radius: 16px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 40px auto 0; /* Added top margin for spacing */
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     overflow: hidden;
     position: relative;
 }
 
-.media-placeholder::after {
-    content: "media goes here";
-    color: rgba(255,255,255,0.3);
-    font-weight: 700;
+.media-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
-
 
 .features {
     padding: 100px 0;
@@ -199,18 +197,18 @@ nav {
     font-size: 1.1rem;
 }
 
-.split-image {
-    background-color: #000;
-    border-radius: 12px;
-    aspect-ratio: 4/3;
-    
-    background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill="%23333" d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100px;
-    border: 1px solid rgba(255,255,255,0.1);
+.split-image { 
+    background-color: #000; 
+    border-radius: 12px; 
+    aspect-ratio: 4/3; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    /* Use the image file directly in the background-image property */
+    background-image: url('sbs.jpg'); 
+    /* Set size to cover the entire container */
+    background-size: cover; 
+    border: 1px solid rgba(255,255,255,0.1); 
 }
-
 
 .cta-section {
     background: linear-gradient(180deg, var(--color-bg) 0%, #1e2b33 100%);
